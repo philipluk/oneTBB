@@ -29,7 +29,7 @@ build_system = 'cmake'
 def commands():
 
     # Split and store version and package version
-    split_versions = str(version).split('+')
+    split_versions = str(version).split('-')
     env.TBB_VERSION.set(split_versions[0])
     env.TBB_PACKAGE_VERSION.set(split_versions[1])
 
