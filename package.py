@@ -2,7 +2,7 @@
 
 name = 'tbb'
 
-version = '2019.U9-ta.1.0.0'
+version = '2019.U9-ta.1.1.0'
 
 authors = [
     'benjamin.skinner',
@@ -34,6 +34,7 @@ def commands():
     env.TBB_PACKAGE_VERSION.set(split_versions[1])
 
     env.TBB_ROOT.set("{root}")
+    env.TBBROOT.set("{root}")
     env.TBB_ROOT_DIR.set("{root}")
     
     env.TBB_INCLUDE_DIR.set("{root}/include")
