@@ -2,7 +2,7 @@
 
 name = 'tbb'
 
-version = '2019.U9-ta.1.1.0'
+version = '2019.U9-ta.1.2.0'
 
 authors = [
     'benjamin.skinner',
@@ -27,7 +27,7 @@ variants = [
 build_system = 'cmake'
 
 def commands():
-
+    import sys
     # Split and store version and package version
     split_versions = str(version).split('-')
     env.TBB_VERSION.set(split_versions[0])
@@ -41,3 +41,5 @@ def commands():
     env.TBB_LIBRARY_DIR.set("{root}/lib")
 
     env.PATH.append( str(env.TBB_LIBRARY_DIR) )
+    if 'win' not in str(sys.platform):
+        env.LD_LIBRARY_PATH.append(str(env.TBB_LIBRARY_DIR) )
